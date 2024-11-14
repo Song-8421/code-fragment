@@ -9,6 +9,9 @@ function createWindow(): void {
     width: 900,
     height: 670,
     show: false,
+    // 打开位置设置
+    x: 1000,
+    y: 50,
     //alwaysOnTop: true, // 永远保持窗口置顶
     autoHideMenuBar: true,
     ...(process.platform === "linux" ? { icon } : {}),
@@ -18,7 +21,7 @@ function createWindow(): void {
     }
   });
   // 开启开发工具
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
   });
