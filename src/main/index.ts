@@ -15,6 +15,7 @@ function createWindow(): void {
     y: height - height,
     //alwaysOnTop: true, // 永远保持窗口置顶
     // 背景透明
+    minHeight: 120,
     frame: false,
     transparent: true,
     autoHideMenuBar: true,
