@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CodeContext } from "@renderer/context/CodeContext";
 
 const Results = () => {
+  const { data } = useContext(CodeContext)!;
   return (
-    <div className = "bg-slate-50">
-      47417
-    </div>
+    <main className = "bg-slate-50 p-6 rounded-bl-lg rounded-br-lg -mt-6">
+      {data.map((item) => (
+        <div key = {item.id} className = "text-slate-500 truncate mb-4">
+          {item.content}
+        </div>
+      ))}
+    </main>
   );
 };
 
