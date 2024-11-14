@@ -1,17 +1,18 @@
-import { app, BrowserWindow, ipcMain, shell } from "electron";
+import { app, BrowserWindow, ipcMain, screen, shell } from "electron";
 import { join } from "path";
 import { electronApp, is, optimizer } from "@electron-toolkit/utils";
 import icon from "../../resources/icon.png?asset";
 
 function createWindow(): void {
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   // 创建窗口
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 600,
+    height: 300,
     show: false,
     // 打开位置设置
-    x: 1000,
-    y: 50,
+    x: width - 600,
+    y: height - height,
     //alwaysOnTop: true, // 永远保持窗口置顶
     autoHideMenuBar: true,
     ...(process.platform === "linux" ? { icon } : {}),
