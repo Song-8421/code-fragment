@@ -1,4 +1,5 @@
 import Search from "./components/Search";
+import Results from "./components/Results";
 
 function App(): JSX.Element {
   const ipcHandle = (): void => window.electron.ipcRenderer.send("ping");
@@ -6,6 +7,7 @@ function App(): JSX.Element {
   return (
     <>
       <Search></Search>
+      <Results></Results>
     </>
   );
 }
