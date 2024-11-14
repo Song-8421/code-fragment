@@ -1,0 +1,22 @@
+body {
+  //@apply bg-gray-900;
+
+}
+
+html, body {
+  background-color: transparent;
+
+
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+.nodrag,
+input,
+select,
+textarea,
+option {
+  -webkit-app-region: no-drag;
+}
