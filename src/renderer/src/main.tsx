@@ -1,4 +1,4 @@
-import "@renderer/assets/main.css";
+// import "@renderer/assets/main.css";
 import "@renderer/assets/tailwind.css";
 
 import React from "react";

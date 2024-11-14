@@ -9,7 +9,7 @@ function createWindow(): void {
     width: 900,
     height: 670,
     show: false,
-    alwaysOnTop: true, // 永远保持窗口置顶
+    //alwaysOnTop: true, // 永远保持窗口置顶
     autoHideMenuBar: true,
     ...(process.platform === "linux" ? { icon } : {}),
     webPreferences: {
