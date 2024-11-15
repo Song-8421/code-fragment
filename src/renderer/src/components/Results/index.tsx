@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { CodeContext } from "@renderer/context/CodeContext";
+import React from "react";
+import useCode from "@renderer/hooks/useCode";
 
 const Results = () => {
-  const { data } = useContext(CodeContext)!;
+  const { data } = useCode();
   return (
     <main className = "bg-slate-50 p-6 rounded-bl-lg rounded-br-lg -mt-6">
       {data.map((item) => (
