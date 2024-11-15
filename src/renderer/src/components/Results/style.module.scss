@@ -1,0 +1,11 @@
+.main {
+  @apply bg-slate-50 p-6 rounded-bl-lg rounded-br-lg -mt-6;
+  .codeItem {
+    @apply text-slate-500 transition-shadow truncate mb-4;
+
+  }
+
+  .active {
+    @apply bg-orange-200 p-1 text-white rounded-[4px];
+  }
+}
