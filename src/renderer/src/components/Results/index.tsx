@@ -22,10 +22,10 @@ const Results = () => {
         return;
     }
     if (currentIndexTemp > data.length - 1) {
-      currentIndexTemp = data.length - 1;
+      currentIndexTemp = 0;
     }
     if (currentIndexTemp < 0) {
-      currentIndexTemp = 0;
+      currentIndexTemp = data.length - 1;
     }
     console.log(currentIndexTemp, "---");
     setCurrentIndex(currentIndexTemp);
