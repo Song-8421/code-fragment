@@ -1,26 +1,8 @@
-import { ChangeEvent, useState } from "react";
-import useCode from "../../hooks/useCode";
-import { codes } from "@renderer/data";
 
+import useSearch from "@renderer/hooks/useSearch";
 function Search() {
-  const { setData } = useCode();
-  const [search, setSearch] = useState("");
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    const keyword = e.target.value;
-    setSearch(keyword);
-    if (keyword === "") {
-      setData([]);
-    } else {
-      setData(
-        codes.filter(
-          code =>
-            code.content.toLowerCase().includes(keyword.toLowerCase())
-        )
-      );
-    }
-
-
-  };
+  
+ const {search,handleSearch} = useSearch()
   return (
     <div className = "bg-slate-50 rounded-lg p-6 drag ">
       <section className = "bg-slate-200 p-3  rounded-lg">
