@@ -3,33 +3,34 @@ import useCode from "@renderer/hooks/useCode";
 import { copyLinkToClipboardFn } from "@renderer/utils/copyToClipboard";
 export default () => {
   const { data } = useCode();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [id, setId] = useState(1);
  
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-    let currentIndexTemp = currentIndex;
+    
     switch (e.key) {
       case "ArrowUp":
-        currentIndexTemp--;
+        setId(() => {
+          const index = data.findIndex(item => item.id === id)-1
+          return data[index]?.id||data[data.length-1]?.id
+        })
         break;
       case "ArrowDown":
-        currentIndexTemp++;
+        setId(() => {
+          const index = data.findIndex(item => item.id === id)+1
+          return data[index]?.id||data[0]?.id
+        })
         break;
       case "Enter":
-        copyLinkToClipboardFn(data[currentIndexTemp].content);
+        
+        copyLinkToClipboardFn( data[ data.findIndex(item => item.id === id)]?.content);
         break;
       default:
         return;
     }
-    if (currentIndexTemp > data.length - 1) {
-      currentIndexTemp = 0;
-    }
-    if (currentIndexTemp < 0) {
-      currentIndexTemp = data.length - 1;
-    }
-    console.log(currentIndexTemp, "---");
-    setCurrentIndex(currentIndexTemp);
-  },[data,currentIndex])
+   
+   
+  },[data,id])
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => {
@@ -37,10 +38,10 @@ export default () => {
       
     };
   }, [handleKeyDown]);
-  useEffect(() => setCurrentIndex(0), [data])
+  useEffect(() => setId(1), [data])
   
   return {
     data,
-    currentIndex
+    id
   }
 }

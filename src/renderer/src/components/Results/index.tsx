@@ -3,12 +3,12 @@ import styles from "./style.module.scss";
 
 
 const Results = () => {
-  const { data ,currentIndex} = useCodeSelect();
+  const { data ,id} = useCodeSelect();
   return (
     <main className = {styles.main}>
-      {data.map((item, index) => (
+      {data.map((item) => (
         <div key = {item.id}
-             className = {`${styles.codeItem} ${currentIndex === index ? styles.active : ""}`}>
+             className = {`${styles.codeItem} ${id === item.id ? styles.active : ""}`}>
           {item.content}
         </div>
       ))}
