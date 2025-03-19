@@ -3,7 +3,7 @@ import styles from "./style.module.scss";
 
 
 const Results = () => {
-  const { data ,id} = useCodeSelect();
+  const { data, id } = useCodeSelect();
   return (
     <main className = {styles.main}>
       {data.map((item) => (

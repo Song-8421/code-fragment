@@ -1,8 +1,8 @@
-
 import useSearch from "@renderer/hooks/useSearch";
+
 function Search() {
-  
- const {search,handleSearch} = useSearch()
+
+  const { search, handleSearch } = useSearch();
   return (
     <div className = "bg-slate-50 rounded-lg p-6 drag ">
       <section className = "bg-slate-200 p-3  rounded-lg">
